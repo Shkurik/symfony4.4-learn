@@ -34,7 +34,7 @@ class Note
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $datetime;
+    private $create;
 
     public function getId(): ?int
     {
@@ -77,14 +77,14 @@ class Note
         return $this;
     }
 
-    public function getDatetime(): ?\DateTimeInterface
+    public function getCreate(): ?\DateTimeInterface
     {
-        return $this->datetime;
+        return $this->create;
     }
 
-    public function setDatetime(?\DateTimeInterface $datetime): self
+    public function setCreate(?\DateTimeInterface $create): self
     {
-        $this->datetime = $datetime;
+        $this->create = $create;
 
         return $this;
     }
