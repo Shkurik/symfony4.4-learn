@@ -14,7 +14,7 @@ final class Version20191210164753 extends AbstractMigration
 {
     public function getDescription() : string
     {
-        return '';
+        return 'My first migrstion in Symfony';
     }
 
     public function up(Schema $schema) : void
