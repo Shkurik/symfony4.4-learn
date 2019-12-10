@@ -8,12 +8,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/index{}", name="mainShkurik")
+     * @Route("/shkurik", name="shkurik")
      */
     public function index()
     {
-        return $this->render('main/index.html.twig', [
+        $date = date('d-m-Y');
+        return $this->render('shkurik.html.twig', [
             'controller_name' => 'MainController',
+            'date' => $date,
         ]);
     }
 }
