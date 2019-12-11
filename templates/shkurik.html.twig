@@ -17,5 +17,31 @@
         <li>Your template at <code><a href="{{ '/home/shkurik/www/symfony4.4.loc/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
         <li>Today is: <code>{{ date }}</code></li>
     </ul>
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">status</th>
+            </tr>
+        </thead>
+        <tbody>
+        {%  for note in notes %}
+            <tr>
+                <td scope="row">{{ note.id }}</td>
+                <td>{{ note.title }}</td>
+                <td>{{ note.description }}</td>
+                <td>{{ note.status }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\NoteRepository")
@@ -17,21 +18,34 @@ class Note
     private $id;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *     min="4",
+     *     max="51",
+     *     minMessage="value = {{ value }}, Too few. Count must be - {{ limit }}",
+     *     maxMessage="Too much"
+     * )
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $title;
 
     /**
+     * @Assert\NotBlank()
+     *
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
+     * @Assert\NotBlank()
+     *
      * @ORM\Column(type="smallint", nullable=true)
      */
     private $status;
 
     /**
+     * @Assert\NotBlank()
+     *
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $created;
